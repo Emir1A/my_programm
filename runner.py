@@ -1,4 +1,4 @@
-
+# напиши модуль для работы с анимацией
 
 from kivy.properties import NumericProperty, BooleanProperty
 from kivy.uix.button import Button
@@ -30,5 +30,21 @@ class Runner(BoxLayout):
    def restart(self, total):
        self.total = total
        self.start()
+ 
+   def start(self):
+       self.value = 0
+       self.finished = False
+       self.btn.text = self.btext_inprogress
+       if self.autorepeat:
+           self.animation.repeat = True
+       self.animation.start(self.btn)
+ 
+   def next(self, widget, step):
+       if step == 1.0:
+           self.value += 1
+           if self.value >= self.total:
+               self.animation.repeat = False
+               self.finished = True
+
  
   
