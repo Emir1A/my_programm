@@ -1,4 +1,4 @@
-# напиши модуль для работы с анимацией
+
 
 from kivy.properties import NumericProperty, BooleanProperty
 from kivy.uix.button import Button
@@ -46,5 +46,5 @@ class Runner(BoxLayout):
                self.animation.repeat = False
                self.finished = True
 
- 
-  
+
+   
